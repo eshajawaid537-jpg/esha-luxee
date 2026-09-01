@@ -3,275 +3,387 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated Title & Open Graph Meta Tags for Professional WhatsApp Link Preview -->
-    <title>Esha Jawaid | Creative UI/UX Developer & Frontend Specialist</title>
-    <meta name="title" content="Esha Jawaid | Creative UI/UX Developer & Frontend Specialist">
-    <meta property="og:title" content="Esha Jawaid | Creative UI/UX Developer & Frontend Specialist">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://esha-jawaid.vercel.app/">
-    <meta property="og:description" content="Portfolio of Esha Jawaid - High-performance storefronts, corporate web portals, and scalable digital interfaces with precision engineering.">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Esha Jawaid | Creative UI/UX Developer & Frontend Specialist">
-
-    <!-- Font Awesome Icons & Google Fonts -->
+    <title>ESHA LUXE — Haute Couture & Statement Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+    
     <style>
         :root {
-            --bg-dark: #070714;
-            --card-bg: #0d0f26;
-            --card-border: rgba(139, 92, 246, 0.15);
-            --accent-purple: #6366f1;
-            --accent-blue: #4f46e5;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --glow: 0 0 25px rgba(99, 102, 241, 0.4);
+            --gold: #D4AF37;
+            --dark-gold: #AA7C11;
+            --black: #0B0B0B;
+            --dark-gray: #1A1A1A;
+            --light-gray: #F5F5F7;
+            --white: #FFFFFF;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--black); color: var(--white); overflow-x: hidden; }
+
+        .top-bar {
+            background: linear-gradient(90deg, #111, var(--dark-gold), #111);
+            color: #fff; text-align: center; padding: 8px 15px;
+            font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
         }
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 24px 16px;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 50% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
-            background-attachment: fixed;
+        header {
+            background: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 15px 50px;
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1300px; margin: 0 auto; }
+        .logo { font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: var(--white); text-decoration: none; letter-spacing: 3px; }
+        .logo span { color: var(--gold); }
+
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a { color: #ccc; text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        .cart-icon-btn { position: relative; cursor: pointer; font-size: 18px; color: var(--gold); background: none; border: none; }
+        .cart-count {
+            position: absolute; top: -8px; right: -12px;
+            background: var(--gold); color: #000;
+            font-size: 10px; font-weight: bold; width: 18px; height: 18px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
         }
 
-        .container {
-            width: 100%;
-            max-width: 480px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+        /* Catalog Grid */
+        .catalog-section { padding: 60px 20px; max-width: 1300px; margin: 0 auto; }
+        .section-title { font-family: 'Cinzel', serif; text-align: center; font-size: 28px; color: var(--gold); letter-spacing: 4px; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
-        /* Top Header Navigation Bar */
-        .top-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            margin-bottom: 10px;
+        /* Product Card */
+        .card {
+            background: var(--dark-gray); border: 1px solid rgba(212, 175, 55, 0.15);
+            border-radius: 8px; overflow: hidden; padding: 20px; transition: 0.3s;
+            display: flex; flex-direction: column; justify-content: space-between;
         }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .card img { width: 100%; height: 260px; object-fit: cover; border-radius: 4px; margin-bottom: 15px; }
+        .card h3 { font-family: 'Cinzel', serif; font-size: 17px; margin-bottom: 6px; }
+        .card .price { color: var(--gold); font-weight: 600; margin-bottom: 15px; }
 
-        .profile-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        /* Size & Color Options */
+        .options-group { margin-bottom: 12px; }
+        .options-label { font-size: 11px; text-transform: uppercase; color: #aaa; letter-spacing: 1px; margin-bottom: 6px; display: block; }
+        
+        .sizes-list { display: flex; gap: 8px; flex-wrap: wrap; }
+        .size-btn {
+            background: #222; border: 1px solid #444; color: #fff; padding: 4px 10px;
+            font-size: 11px; border-radius: 3px; cursor: pointer; transition: 0.2s;
         }
+        .size-btn.active, .size-btn:hover { background: var(--gold); color: #000; border-color: var(--gold); font-weight: bold; }
 
-        .avatar-box {
-            width: 52px;
-            height: 52px;
-            background: linear-gradient(135deg, #4f46e5, #9333ea);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 20px;
-            color: #ffffff;
-            box-shadow: var(--glow);
+        .colors-list { display: flex; gap: 10px; align-items: center; margin-top: 4px; }
+        .color-dot {
+            width: 20px; height: 20px; border-radius: 50%; cursor: pointer;
+            border: 2px solid transparent; transition: 0.2s;
         }
+        .color-dot.active { border-color: #fff; transform: scale(1.15); }
 
-        .brand-text {
-            display: flex;
-            flex-direction: column;
+        .btn-add {
+            width: 100%; padding: 12px; background: transparent; border: 1px solid var(--gold);
+            color: var(--gold); text-transform: uppercase; font-size: 12px; letter-spacing: 2px;
+            cursor: pointer; margin-top: 15px; border-radius: 4px; transition: 0.3s;
         }
+        .btn-add:hover { background: var(--gold); color: #000; font-weight: 600; }
 
-        .brand-text h1 {
-            font-size: 18px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            color: #ffffff;
-            line-height: 1.2;
+        /* Cart Drawer */
+        .cart-drawer {
+            position: fixed; top: 0; right: -400px; width: 360px; height: 100%;
+            background: #141414; border-left: 1px solid var(--gold); z-index: 2000;
+            padding: 25px; display: flex; flex-direction: column; transition: 0.4s ease;
         }
+        .cart-drawer.open { right: 0; }
+        .cart-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 15px; }
+        .cart-header h3 { font-family: 'Cinzel', serif; color: var(--gold); }
+        .close-cart { cursor: pointer; font-size: 20px; color: #fff; }
 
-        .brand-text span {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #818cf8;
-            text-transform: uppercase;
+        .cart-items { flex: 1; overflow-y: auto; margin: 20px 0; }
+        .cart-item { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 13px; border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .cart-item-info small { color: #888; display: block; margin-top: 3px; }
+
+        /* Checkout Modal */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); z-index: 3000; justify-content: center; align-items: center;
         }
-
-        .talk-btn {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: white;
-            padding: 10px 18px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-            transition: all 0.3s ease;
+        .modal-overlay.active { display: flex; }
+        .checkout-modal { background: #181818; padding: 30px; border: 1px solid var(--gold); border-radius: 8px; width: 90%; max-width: 450px; }
+        .checkout-modal h2 { font-family: 'Cinzel', serif; color: var(--gold); margin-bottom: 15px; text-align: center; }
+        
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; font-size: 11px; text-transform: uppercase; margin-bottom: 4px; color: #bbb; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 10px; background: #222; border: 1px solid #444; color: #fff; border-radius: 4px; font-size: 13px;
         }
-
-        .talk-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+        .btn-submit-order {
+            width: 100%; padding: 12px; background: var(--gold); color: #000; border: none;
+            font-weight: bold; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; margin-top: 10px; border-radius: 4px;
         }
-
-        /* Bio Description Banner */
-        .bio-description {
-            text-align: center;
-            color: #d1d5db;
-            font-size: 14.5px;
-            line-height: 1.6;
-            margin: 8px 0 12px 0;
-            padding: 0 8px;
-        }
-
-        /* Action Buttons Section (GitHub Removed) */
-        .cta-section {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            width: 100%;
-            align-items: center;
-        }
-
-        .btn-live {
-            width: 85%;
-            background: linear-gradient(135deg, #5b50f6 0%, #7c3aed 100%);
-            color: white;
-            text-decoration: none;
-            padding: 16px 24px;
-            border-radius: 16px;
-            font-size: 15px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 8px 25px rgba(91, 80, 246, 0.4);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-live:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(91, 80, 246, 0.6);
-        }
-
-        /* Stats Grid (2x2 Layout) */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .stat-card {
-            background: rgba(13, 15, 38, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 24px 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            border-color: rgba(139, 92, 246, 0.3);
-            transform: translateY(-3px);
-            background: rgba(17, 20, 50, 0.85);
-        }
-
-        .stat-val {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 11px;
-            font-weight: 700;
-            color: #9ca3af;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            line-height: 1.4;
-        }
-
-        .val-purple { color: #a5b4fc; }
-        .val-light-purple { color: #c084fc; }
-        .val-pink { color: #f472b6; }
-        .val-green { color: #34d399; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Header Section -->
-        <header class="top-nav">
-            <div class="profile-brand">
-                <div class="avatar-box">EJ</div>
-                <div class="brand-text">
-                    <h1>Esha Jawaid</h1>
-                    <span>Full-Stack Architect</span>
-                </div>
-            </div>
-            <a href="https://wa.me/" class="talk-btn" target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Let's Talk
-            </a>
-        </header>
+    <div class="top-bar">
+        COMPLIMENTARY NATIONWIDE EXPRESS SHIPPING ON ALL ORDERS OVER PKR 15,000
+    </div>
 
-        <!-- Description -->
-        <p class="bio-description">
-            storefronts, corporate web portals, and scalable digital interfaces with precision engineering.
-        </p>
-
-        <!-- Action Buttons -->
-        <div class="cta-section">
-            <a href="#" class="btn-live">
-                <i class="fa-solid fa-rocket"></i> View Live Deployments
-            </a>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">ESHA <span>LUXE</span></a>
+            <ul class="nav-links">
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#features">Experience</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+            <button class="cart-icon-btn" onclick="toggleCart()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
         </div>
+    </header>
 
-        <!-- 2x2 Stats Grid -->
-        <div class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-val val-purple">3.46</span>
-                <span class="stat-label">Academic CGPA<br>(BS CS)</span>
+    <section class="catalog-section" id="catalog">
+        <h2 class="section-title">CURATED CATALOG</h2>
+        <div class="grid" id="productGrid">
+            <!-- Products Loaded Dynamically with Size & Color Options -->
+        </div>
+    </section>
+
+    <!-- Shopping Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>YOUR SHOPPING BAG</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div style="border-top: 1px solid #333; padding-top: 15px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                <span>Total:</span>
+                <span id="cartTotal" style="color: var(--gold); font-weight: bold;">PKR 0</span>
             </div>
-            <div class="stat-card">
-                <span class="stat-val val-light-purple">100%</span>
-                <span class="stat-label">Mobile & Speed<br>Optimized</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-val val-pink">Live</span>
-                <span class="stat-label">Production Web<br>Apps</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-val val-green">Certified</span>
-                <span class="stat-label">SEO &<br>Freelancing</span>
-            </div>
+            <button class="btn-add" style="background: var(--gold); color: #000;" onclick="openCheckout()">Proceed to Order via Email</button>
         </div>
     </div>
 
+    <!-- Email Order Modal -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="checkout-modal">
+            <h2>PLACE ORDER VIA EMAIL</h2>
+            <form id="orderForm" onsubmit="sendEmailOrder(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="custName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="custPhone" required placeholder="03XXXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label>Delivery Address</label>
+                    <textarea id="custAddress" rows="3" required placeholder="Full shipping address"></textarea>
+                </div>
+                <button type="submit" class="btn-submit-order">Confirm & Send Order Email</button>
+                <button type="button" class="btn-add" style="border: none; margin-top: 5px; color: #888;" onclick="closeCheckout()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Owner Email Receiver Configuration
+        const STORE_OWNER_EMAIL = "eshajawaid95@gmail.com";
+
+        // ALL ORIGINAL CATALOG PRODUCTS PRESERVED
+        const products = [
+            {
+                id: 1,
+                name: "Embroidered Haute Couture Dress",
+                price: 28500,
+                img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=600&q=80",
+                sizes: ["XS", "S", "M", "L", "XL"],
+                colors: [{ name: "Gold", hex: "#D4AF37" }, { name: "Emerald", hex: "#004B23" }, { name: "Black", hex: "#000000" }]
+            },
+            {
+                id: 2,
+                name: "Bespoke Statement Timepiece",
+                price: 45000,
+                img: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80",
+                sizes: ["Standard"],
+                colors: [{ name: "Gold", hex: "#D4AF37" }, { name: "Silver", hex: "#C0C0C0" }, { name: "Rose Gold", hex: "#B76E79" }]
+            },
+            {
+                id: 3,
+                name: "Velvet Luxe Evening Gown",
+                price: 32000,
+                img: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80",
+                sizes: ["S", "M", "L"],
+                colors: [{ name: "Burgundy", hex: "#800020" }, { name: "Midnight Blue", hex: "#191970" }, { name: "Onyx Black", hex: "#111111" }]
+            },
+            {
+                id: 4,
+                name: "Handcrafted Luxury Leather Bag",
+                price: 18500,
+                img: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80",
+                sizes: ["Medium", "Large"],
+                colors: [{ name: "Tan Brown", hex: "#D2B48C" }, { name: "Classic Black", hex: "#000000" }, { name: "Cream White", hex: "#FFFDD0" }]
+            },
+            {
+                id: 5,
+                name: "Gold-Plated Designer Audio Wear",
+                price: 22000,
+                img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+                sizes: ["One Size"],
+                colors: [{ name: "Matte Black & Gold", hex: "#D4AF37" }, { name: "Silver Accent", hex: "#C0C0C0" }]
+            },
+            {
+                id: 6,
+                name: "Silk Embroidered Shawl",
+                price: 14500,
+                img: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=600&q=80",
+                sizes: ["Free Size"],
+                colors: [{ name: "Royal Emerald", hex: "#046307" }, { name: "Deep Maroon", hex: "#58111A" }, { name: "Gold Accent", hex: "#D4AF37" }]
+            }
+        ];
+
+        let selectedOptions = {};
+        let cart = [];
+
+        function renderProducts() {
+            const container = document.getElementById('productGrid');
+            container.innerHTML = products.map(prod => {
+                if (!selectedOptions[prod.id]) {
+                    selectedOptions[prod.id] = { size: prod.sizes[0], color: prod.colors[0].name };
+                }
+
+                return `
+                <div class="card">
+                    <img src="${prod.img}" alt="${prod.name}">
+                    <h3>${prod.name}</h3>
+                    <div class="price">PKR ${prod.price.toLocaleString()}</div>
+                    
+                    <div class="options-group">
+                        <span class="options-label">Available Sizes</span>
+                        <div class="sizes-list">
+                            ${prod.sizes.map(s => `
+                                <button class="size-btn ${selectedOptions[prod.id].size === s ? 'active' : ''}" 
+                                    onclick="selectSize(${prod.id}, '${s}')">${s}</button>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="options-group">
+                        <span class="options-label">Available Colors</span>
+                        <div class="colors-list">
+                            ${prod.colors.map(c => `
+                                <div class="color-dot ${selectedOptions[prod.id].color === c.name ? 'active' : ''}" 
+                                    style="background-color: ${c.hex};" 
+                                    title="${c.name}"
+                                    onclick="selectColor(${prod.id}, '${c.name}')"></div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <button class="btn-add" onclick="addToCart(${prod.id})">Add To Bag</button>
+                </div>
+            `}).join('');
+        }
+
+        function selectSize(prodId, size) {
+            selectedOptions[prodId].size = size;
+            renderProducts();
+        }
+
+        function selectColor(prodId, color) {
+            selectedOptions[prodId].color = color;
+            renderProducts();
+        }
+
+        function addToCart(prodId) {
+            const product = products.find(p => p.id === prodId);
+            const selection = selectedOptions[prodId];
+            
+            cart.push({
+                ...product,
+                selectedSize: selection.size,
+                selectedColor: selection.color
+            });
+
+            updateCartUI();
+            toggleCart(true);
+        }
+
+        function updateCartUI() {
+            document.getElementById('cartCount').innerText = cart.length;
+            const cartContainer = document.getElementById('cartItems');
+            
+            cartContainer.innerHTML = cart.map((item, index) => `
+                <div class="cart-item">
+                    <div class="cart-item-info">
+                        <strong>${item.name}</strong>
+                        <small>Size: ${item.selectedSize} | Color: ${item.selectedColor}</small>
+                        <small style="color: var(--gold);">PKR ${item.price.toLocaleString()}</small>
+                    </div>
+                    <span style="cursor:pointer; color:#ff4d4d; font-size: 18px;" onclick="removeFromCart(${index})">&times;</span>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('cartTotal').innerText = `PKR ${total.toLocaleString()}`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function toggleCart(open = null) {
+            const drawer = document.getElementById('cartDrawer');
+            if (open === true) drawer.classList.add('open');
+            else if (open === false) drawer.classList.remove('open');
+            else drawer.classList.toggle('open');
+        }
+
+        function openCheckout() {
+            if (cart.length === 0) {
+                alert("Your shopping bag is empty!");
+                return;
+            }
+            document.getElementById('checkoutModal').classList.add('active');
+        }
+
+        function closeCheckout() {
+            document.getElementById('checkoutModal').classList.remove('active');
+        }
+
+        function sendEmailOrder(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const address = document.getElementById('custAddress').value;
+
+            let orderDetails = cart.map((item, i) => `${i + 1}. ${item.name} - Size: ${item.selectedSize}, Color: ${item.selectedColor} (PKR ${item.price})`).join('%0A');
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+            const subject = encodeURIComponent(`New ESHA LUXE Order from ${name}`);
+            const body = encodeURIComponent(
+                `Customer Name: ${name}\nPhone: ${phone}\nAddress: ${address}\n\n--- ORDER DETAILS ---\n`
+            ) + orderDetails + encodeURIComponent(`\n\nTotal Amount: PKR ${total.toLocaleString()}`);
+
+            window.location.href = `mailto:${STORE_OWNER_EMAIL}?subject=${subject}&body=${body}`;
+            
+            alert("Opening your email application to send order details directly to Esha Jawaid!");
+            closeCheckout();
+            cart = [];
+            updateCartUI();
+            toggleCart(false);
+        }
+
+        renderProducts();
+    </script>
 </body>
 </html>
